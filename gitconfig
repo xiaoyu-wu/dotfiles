@@ -1,0 +1,15 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Xiaoyu Wu
+	email = xwu@enthought.com
+[core]
+	editor = vim
+[color]
+        ui = auto
+[alias]
+        co = checkout
+        cob = checkout -b
+        st = status
+        amend = commit --amend
+        cm = commit
+        cmm = commit -m
