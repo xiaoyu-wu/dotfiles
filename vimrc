@@ -19,6 +19,10 @@ Plugin 'gmarik/Vundle.vim'
 " Python-mode!!!
 "Plugin 'python-mode/python-mode'
 
+" Enhanced python syntax highlighting
+"Plugin 'vim-python/python-syntax'
+Plugin 'sentientmachine/Pretty-Vim-Python'
+
 "git interface
 Plugin 'tpope/vim-fugitive'
 "filesystem
@@ -116,3 +120,6 @@ augroup BgHighlight
     autocmd WinEnter * set cul
     autocmd WinLeave * set nocul
 augroup END
+
+colorscheme molokai
+highlight Comment cterm=bold
