@@ -17,7 +17,7 @@ Plugin 'gmarik/Vundle.vim'
 " used Bundle instead of Plugin)
 
 " Python-mode!!!
-Plugin 'python-mode/python-mode'
+"Plugin 'python-mode/python-mode'
 
 "git interface
 Plugin 'tpope/vim-fugitive'
@@ -109,3 +109,10 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Show cursor line in the current line
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
