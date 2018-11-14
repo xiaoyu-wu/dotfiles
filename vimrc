@@ -36,7 +36,8 @@ map <C-n> :NERDTreeToggle<CR>
 Plugin 'tmhedberg/SimpylFold'
 
 " Show docstring for folded code
-let g:SimplyFold_docstring_preview=1
+let g:SimpylFold_docstring_preview=1
+let g:SimpylFold_docstring=0
 
 " Auto-Indentation
 Plugin 'vim-scripts/indentpython.vim'
@@ -83,7 +84,7 @@ autocmd FileType python set autoindent
 set backspace=indent,eol,start
 
 "Folding based on indentation:
-autocmd FileType python set foldmethod=indent
+"autocmd FileType python set foldmethod=indent
 "use space to open folds
 nnoremap <space> za 
 "----------Stop python PEP 8 stuff--------------
