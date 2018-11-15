@@ -1,3 +1,6 @@
+" put swap files into the following location
+set directory^=$HOME/.vim/tmp//
+
 set nocompatible              " required
 filetype off                  " required
 
@@ -65,7 +68,7 @@ au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 " Wrap text after a certain number of characters
-au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
+"au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
 
 " Use UNIX (\n) line endings.
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
