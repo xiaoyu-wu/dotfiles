@@ -1,5 +1,5 @@
 # Git auto completion (not working for now)
-# source ~/.git-completion.bash
+source ~/.git-completion.bash
 
 # Constants
 export ETS_TOOLKIT=qt4
