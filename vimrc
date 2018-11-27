@@ -48,6 +48,9 @@ let g:SimpylFold_docstring=0
 " Auto-Indentation
 Plugin 'vim-scripts/indentpython.vim'
 
+" Autocomplete for Python (failed for now)
+"Plugin 'davidhalter/jedi-vim'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
 
