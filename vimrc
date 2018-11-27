@@ -19,12 +19,15 @@ Plugin 'gmarik/Vundle.vim'
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
 
+" Pretty colors
+Plugin 'morhetz/gruvbox'
+
 " Python-mode!!!
 "Plugin 'python-mode/python-mode'
 
 " Enhanced python syntax highlighting
-"Plugin 'vim-python/python-syntax'
-Plugin 'sentientmachine/Pretty-Vim-Python'
+Plugin 'vim-python/python-syntax'
+"Plugin 'sentientmachine/Pretty-Vim-Python'
 
 "git interface
 Plugin 'tpope/vim-fugitive'
@@ -77,8 +80,8 @@ au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 set encoding=utf-8
 
 " For full syntax highlighting:
-let python_highlight_all=1
 syntax on
+let python_highlight_all=1
 
 " Keep indentation level from previous line:
 autocmd FileType python set autoindent
@@ -89,7 +92,7 @@ set backspace=indent,eol,start
 "Folding based on indentation:
 "autocmd FileType python set foldmethod=indent
 "use space to open folds
-nnoremap <space> za 
+nnoremap <space> za
 "----------Stop python PEP 8 stuff--------------
 
 " Make it obvious where 79 characters is
@@ -125,5 +128,5 @@ augroup BgHighlight
     autocmd WinLeave * set nocul
 augroup END
 
-colorscheme molokai
+colorscheme gruvbox
 highlight Comment cterm=bold
