@@ -27,7 +27,6 @@ Plugin 'morhetz/gruvbox'
 
 " Enhanced python syntax highlighting
 Plugin 'vim-python/python-syntax'
-"Plugin 'sentientmachine/Pretty-Vim-Python'
 
 "git interface
 Plugin 'tpope/vim-fugitive'
@@ -54,7 +53,8 @@ Plugin 'vim-scripts/indentpython.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-autocmd vimenter * NERDTree
+" Show NERDTree automatically
+"autocmd vimenter * NERDTree
 
 "------------Start Python PEP 8 stuff----------------
 " Number of spaces that a pre-existing tab is equal to.
