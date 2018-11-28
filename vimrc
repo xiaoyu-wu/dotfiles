@@ -54,7 +54,8 @@ Plugin 'vim-scripts/indentpython.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-autocmd vimenter * NERDTree
+" Not to show NERDTree automatically
+"autocmd vimenter * NERDTree
 
 "------------Start Python PEP 8 stuff----------------
 " Number of spaces that a pre-existing tab is equal to.
