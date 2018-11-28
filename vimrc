@@ -23,7 +23,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 
 " Python-mode!!!
-"Plugin 'python-mode/python-mode'
+Plugin 'python-mode/python-mode'
 
 " Enhanced python syntax highlighting
 Plugin 'vim-python/python-syntax'
@@ -133,3 +133,6 @@ augroup END
 
 colorscheme gruvbox
 highlight Comment cterm=bold
+
+" change the mapleader from \ to ,
+let mapleader=","
