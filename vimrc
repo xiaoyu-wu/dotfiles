@@ -23,7 +23,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'morhetz/gruvbox'
 
 " Python-mode!!!
-Plugin 'python-mode/python-mode'
+"Plugin 'python-mode/python-mode'
 
 " Enhanced python syntax highlighting
 Plugin 'vim-python/python-syntax'
@@ -93,7 +93,9 @@ autocmd FileType python set autoindent
 set backspace=indent,eol,start
 
 "Folding based on indentation:
-"autocmd FileType python set foldmethod=indent
+autocmd FileType python set foldmethod=indent
+autocmd FileType python set nofoldenable
+
 "use space to open folds
 nnoremap <space> za
 "----------Stop python PEP 8 stuff--------------
@@ -136,3 +138,11 @@ highlight Comment cterm=bold
 
 " change the mapleader from \ to ,
 let mapleader=","
+
+"let g:pymode_virtualenv = 1
+"let g:pymode_breakpoint = 1
+"let g:pymode_folding = 0
+"let g:pymode_rope = 0
+"let g:pymode_run = 0
+"let g:pymode_options_colorcolumn = 0
+"let g:pymode_lint_on_write = 0
