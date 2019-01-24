@@ -29,7 +29,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-python/python-syntax'
 
 "git interface
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 "filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -49,6 +49,9 @@ Plugin 'vim-scripts/indentpython.vim'
 
 " Autocomplete for Python (failed for now)
 "Plugin 'davidhalter/jedi-vim'
+
+" Vim tmux seamless navigation
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -72,6 +75,8 @@ highlight BadWhitespace ctermbg=red guibg=red
 au BufRead,BufNewFile *.py,*.pyw match BadWhitespace /^\t\+/
 " Make trailing whitespace be flagged as bad.
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" Always remove trailing whitespace
+autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Wrap text after a certain number of characters
 "au BufRead,BufNewFile *.py,*.pyw, set textwidth=100

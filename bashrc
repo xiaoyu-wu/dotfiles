@@ -3,6 +3,8 @@ source ~/.git-completion.bash
 
 # Constants
 export ETS_TOOLKIT=qt4
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 # Credentials
 source ~/.hatcher_credentials
@@ -20,4 +22,11 @@ source ~/.hatcher_credentials
 
 export TERM=xterm-256color
 
+# Alias
 alias ll="ls -alG"
+
+if type nvim > /dev/null 2>&1; then
+  alias vim='nvim'
+fi
+
+
