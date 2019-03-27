@@ -29,7 +29,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'vim-python/python-syntax'
 
 "git interface
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 "filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'

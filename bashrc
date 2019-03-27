@@ -1,3 +1,6 @@
+# Enable vi-mode for shell
+set -o vi
+
 # Git auto completion (not working for now)
 source ~/.git-completion.bash
 
@@ -29,4 +32,10 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
+# AWS related
+# Set default profile so that we don't need --profile after each aws cli
+export AWS_DEFAULT_PROFILE=energyhub
+# Extend session to 12 hrs
+export SAML2AWS_SESSION_DURATION=43200
 
+complete -C /usr/local/bin/mc mc
