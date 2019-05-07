@@ -13,14 +13,6 @@ export EDITOR="$VISUAL"
 source ~/.hatcher_credentials
 
 # Prompt
-# BGREEN='\[\033[1;32m\]'
-# GREEN='\[\033[0;32m\]'
-# BRED='\[\033[1;31m\]'
-# RED='\[\033[0;31m\]'
-# BBLUE='\[\033[1;34m\]'
-# BLUE='\[\033[0;34m\]'
-# NORMAL='\[\033[00m\]'
-# export PS1="${BLUE}(${GREEN}\w${BLUE}) ${NORMAL}\h ${GREEN}\$ ${NORMAL}"
 . ~/.bash_prompt
 
 export TERM=xterm-256color
@@ -34,8 +26,17 @@ fi
 
 # AWS related
 # Set default profile so that we don't need --profile after each aws cli
-export AWS_DEFAULT_PROFILE=energyhub
+export AWS_DEFAULT_PROFILE=ehub_adm
 # Extend session to 12 hrs
 export SAML2AWS_SESSION_DURATION=43200
+# AWS alias
+alias aws-get-c5='export instanceId=`aws ec2 describe-instances --filters "Name=instance-state-name,Values=stopped,Name=instance-type,Values=c5.9xlarge" --query "Reservations[0].Instances[0].InstanceId"` && echo $instanceId'
+alias aws-get-t2='export instanceId=`aws ec2 describe-instances --filters "Name=instance-state-name,Values=stopped,Name=instance-type,Values=t2.xlarge" --query "Reservations[0].Instances[0].InstanceId"` && echo $instanceId'
+alias aws-get-nano='export instanceId=`aws ec2 describe-instances --filters "Name=instance-state-name,Values=stopped,Name=instance-type,Values=t2.nano" --query "Reservations[0].Instances[0].InstanceId"` && echo $instanceId'
+alias aws-start='aws ec2 start-instances --instance-ids $instanceId && aws ec2 wait instance-running --instance-ids $instanceId && export instanceIp=`aws ec2 describe-instances --filters "Name=instance-id,Values=$instanceId" --query "Reservations[0].Instances[0].PublicIpAddress"` && export instanceIp=$instanceIp && echo $instanceIp'
+alias aws-ip='export instanceIp=`aws ec2 describe-instances --filters "Name=instance-id,Values=$instanceId" --query "Reservations[0].Instances[0].PublicIpAddress"` && echo $instanceIp'
+alias aws-ssh='ssh -i ~/.aws/EnergyhubKP.pem ubuntu@$instanceIp'
+alias aws-stop='aws ec2 stop-instances --instance-ids $instanceId'
+alias aws-state='aws ec2 describe-instances --instance-ids $instanceId --query "Reservations[0].Instances[0].State.Name"'
 
 complete -C /usr/local/bin/mc mc
