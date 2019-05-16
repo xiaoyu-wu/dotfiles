@@ -2,7 +2,6 @@
 set directory^=$HOME/.vim/tmp//
 
 set nocompatible              " required
-filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -22,33 +21,12 @@ Plugin 'gmarik/Vundle.vim'
 " Pretty colors
 Plugin 'morhetz/gruvbox'
 
-" Python-mode!!!
-"Plugin 'python-mode/python-mode'
-
-" Enhanced python syntax highlighting
-Plugin 'vim-python/python-syntax'
-
-"git interface
-Plugin 'tpope/vim-fugitive'
 "filesystem
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim' 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 map <C-n> :NERDTreeToggle<CR>
-
-" Pythonic folding
-Plugin 'tmhedberg/SimpylFold'
-
-" Show docstring for folded code
-let g:SimpylFold_docstring_preview=1
-let g:SimpylFold_docstring=0
-
-" Auto-Indentation
-Plugin 'vim-scripts/indentpython.vim'
-
-" Autocomplete for Python (failed for now)
-"Plugin 'davidhalter/jedi-vim'
 
 " Vim tmux seamless navigation
 Plugin 'christoomey/vim-tmux-navigator'
@@ -78,9 +56,6 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 " Always remove trailing whitespace
 autocmd BufWritePre *.py :%s/\s\+$//e
 
-" Wrap text after a certain number of characters
-"au BufRead,BufNewFile *.py,*.pyw, set textwidth=100
-
 " Use UNIX (\n) line endings.
 au BufNewFile *.py,*.pyw,*.c,*.h set fileformat=unix
 
@@ -89,20 +64,12 @@ set encoding=utf-8
 
 " For full syntax highlighting:
 syntax on
-let python_highlight_all=1
 
 " Keep indentation level from previous line:
 autocmd FileType python set autoindent
 
 " make backspaces more powerfull
 set backspace=indent,eol,start
-
-"Folding based on indentation:
-autocmd FileType python set foldmethod=indent
-autocmd FileType python set nofoldenable
-
-"use space to open folds
-nnoremap <space> za
 "----------Stop python PEP 8 stuff--------------
 
 " Make it obvious where 79 characters is
@@ -144,10 +111,8 @@ highlight Comment cterm=bold
 " change the mapleader from \ to ,
 let mapleader=","
 
-"let g:pymode_virtualenv = 1
-"let g:pymode_breakpoint = 1
-"let g:pymode_folding = 0
-"let g:pymode_rope = 0
-"let g:pymode_run = 0
-"let g:pymode_options_colorcolumn = 0
-"let g:pymode_lint_on_write = 0
+" command to make ctags
+command! MakeTags !ctags -R .
+
+" ipdb snippet
+nnoremap ,ipdb :-1read $HOME/.vim/.python_snippets.py<CR>
