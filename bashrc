@@ -6,6 +6,7 @@ source ~/.git-completion.bash
 
 # Constants
 export ETS_TOOLKIT=qt4
+export QT_API=pyqt
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
