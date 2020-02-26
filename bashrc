@@ -9,6 +9,7 @@ export ETS_TOOLKIT=qt4
 export QT_API=pyqt
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export WORKON_HOME=$HOME/.edm/envs
 
 # Credentials
 source ~/.hatcher_credentials
@@ -19,11 +20,16 @@ source ~/.hatcher_credentials
 export TERM=xterm-256color
 
 # Alias
-alias ll="ls -alG"
+alias ll="ls -arltG"
 
 if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
+
+# Emacs for OSX
+# Installed via "brew cask install emacs"
+alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs -nw'
+alias emacsgui='/Applications/Emacs.app/Contents/MacOS/Emacs'
 
 # AWS related
 # Set default profile so that we don't need --profile after each aws cli
