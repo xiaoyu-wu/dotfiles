@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
 	name = Xiaoyu Wu
-	email = xwu@enthought.com
+	email = wxy8955@gmail.com
 [core]
 	editor = vim
 [color]
